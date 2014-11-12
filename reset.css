@@ -1,6 +1,6 @@
 /* v1.0 | 20080212 */
 
-html, body, div, span, applet, object, iframe,
+.qv-object-GanttSense html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
@@ -17,36 +17,36 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
   background: transparent;
 }
-body {
+.qv-object-GanttSense body {
   line-height: 1;
 }
-ol, ul {
+.qv-object-GanttSense ol, ul {
   list-style: none;
 }
-blockquote, q {
+.qv-object-GanttSense blockquote, q {
   quotes: none;
 }
-blockquote:before, blockquote:after,
+.qv-object-GanttSense blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
 /* remember to define focus styles! */
-:focus {
+.qv-object-GanttSense :focus {
   outline: 0;
 }
 
 /* remember to highlight inserts somehow! */
-ins {
+.qv-object-GanttSense ins {
   text-decoration: none;
 }
-del {
+.qv-object-GanttSense del {
   text-decoration: line-through;
 }
 
 /* tables still need 'cellspacing="0"' in the markup */
-table {
+.qv-object-GanttSense table {
   border-collapse: collapse;
   border-spacing: 0;
 }
