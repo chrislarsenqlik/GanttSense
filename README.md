@@ -1,6 +1,7 @@
 # Sense Gantt Extension
 
 The Sense Gantt chart has been adapted from the jQuery-ganttView visualization here: https://github.com/thegrubbsian/jquery.ganttView
+
 Currently you can specify the Projected Start/End dates and the Actual Start/End Dates in the dimensions as well as the name of the task and it will give you a Gantt layout with those 2 time series.
 
 ###Features:
