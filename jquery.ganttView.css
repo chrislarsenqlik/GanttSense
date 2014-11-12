@@ -4,24 +4,24 @@ Copyright (c) 2010 JC Grubbs - jc.grubbs@devmynd.com
 MIT License Applies
 */
 
-.qv-object-GanttSense  .qv-object-GanttSense div.ganttview-hzheader-month,
-.qv-object-GanttSense div.ganttview-hzheader-day,
-.qv-object-GanttSense div.ganttview-vtheader,
-.qv-object-GanttSense div.ganttview-vtheader-item-name,
-.qv-object-GanttSense div.ganttview-vtheader-series,
-.qv-object-GanttSense div.ganttview-grid,
-.qv-object-GanttSense div.ganttview-grid-row-cell {
+.qv-object-GanttSense div.ganttview-hzheader-month,
+div.ganttview-hzheader-day,
+div.ganttview-vtheader,
+ div.ganttview-vtheader-item-name,
+div.ganttview-vtheader-series,
+div.ganttview-grid,
+div.ganttview-grid-row-cell {
 	float: left;
 }
 
 .qv-object-GanttSense div.ganttview-hzheader-month,
-.qv-object-GanttSense div.ganttview-hzheader-day {
+div.ganttview-hzheader-day {
 	text-align: center;
 }
 
 .qv-object-GanttSense div.ganttview-grid-row-cell.last,
-.qv-object-GanttSense div.ganttview-hzheader-day.last,
-.qv-object-GanttSense div.ganttview-hzheader-month.last {
+div.ganttview-hzheader-day.last,
+div.ganttview-hzheader-month.last {
 	border-right: none;
 }
 

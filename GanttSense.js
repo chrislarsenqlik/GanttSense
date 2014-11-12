@@ -36,7 +36,7 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				qDimensions: [],
 				qMeasures: [],
 				qInitialDataFetch: [{
-					qWidth: 3,
+					qWidth: 5,
 					qHeight: 2000
 				}]
 			}
@@ -83,7 +83,7 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 	       $("#" + id).width($element.width());
 		   $("#" + id).height($element.height());
 	       $element.css("overflow","auto");
-	       
+
 			var sourcevalues;
 			var recid = 1;
 			var sourcedata = qMatrix.map(function(d) {
@@ -91,11 +91,16 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				"name":d[0].qText,
 				"start":d[1].qText,
 				"end":d[2].qText
-				// ,"projStart":d[3].qText,
-				// "projEnd":d[4].qText,
+				,"projStart":d[3].qText
+				,"projEnd":d[4].qText
 			}
 			});
-			var ganttData = [];
+
+			// console.log('sourcedata:')
+			// console.log(sourcedata)
+
+			var ganttData =[];
+
 			sourcedata.forEach(function(d) {
 			  if (d.start != '-') {
 				var ganttStartArray = d.start.split('-');
@@ -105,27 +110,57 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				var ganttStart = new Date(ganttStartYear,ganttStartMonth,ganttStartDay);
 
 				var ganttFinishArray = d.end.split('-');
-				var ganttFinishYear = ganttStartArray[0];
-				var ganttFinishMonth = ganttStartArray[1]-1;
-				var ganttFinishDay = ganttStartArray[2];
+				var ganttFinishYear = ganttFinishArray[0];
+				var ganttFinishMonth = ganttFinishArray[1]-1;
+				var ganttFinishDay = ganttFinishArray[2];
 				var ganttEnd = new Date(ganttFinishYear,ganttFinishMonth,ganttFinishDay);
 
 				console.log(d.start)
-				console.log(ganttStartArray)
-				console.log('year: '+ganttStartYear)
-				console.log('month: '+ganttStartMonth)
-				console.log('day: '+ganttStartDay)
+				console.log('start array: '+ganttStartArray)
+				console.log('finish array: '+ganttFinishArray)
+				console.log('start year: '+ganttStartYear)
+				console.log('start month: '+ganttStartMonth)
+				console.log('start day: '+ganttStartDay)
+				console.log('finish year: '+ganttFinishYear)
+				console.log('finish month: '+ganttFinishMonth)
+				console.log('finish day: '+ganttFinishDay)
+
+
+				var ganttProjStartArray = d.projStart.split('-');
+				var ganttProjStartYear = ganttProjStartArray[0];
+				var ganttProjStartMonth = ganttProjStartArray[1]-1;
+				var ganttProjStartDay = ganttProjStartArray[2];
+				var ganttProjStart = new Date(ganttProjStartYear,ganttProjStartMonth,ganttProjStartDay);
+
+				var ganttProjFinishArray = d.projEnd.split('-');
+				var ganttProjFinishYear = ganttProjFinishArray[0];
+				var ganttProjFinishMonth = ganttProjFinishArray[1]-1;
+				var ganttProjFinishDay = ganttProjFinishArray[2];
+				var ganttProjEnd = new Date(ganttProjFinishYear,ganttProjFinishMonth,ganttProjFinishDay);
+
+				console.log(d.start)
+				console.log('Proj start array: '+ganttProjStartArray)
+				console.log('Proj finish array: '+ganttProjFinishArray)
+				console.log('Proj start year: '+ganttProjStartYear)
+				console.log('Proj start month: '+ganttProjStartMonth)
+				console.log('Proj start day: '+ganttProjStartDay)
+				console.log('Proj finish year: '+ganttProjFinishYear)
+				console.log('Proj finish month: '+ganttProjFinishMonth)
+				console.log('Proj finish day: '+ganttProjFinishDay)
+
+
+
 				// var ganttProjStartArray = d.projStart.split('-');
 				// var ganttProjStartYear = ganttStartArray[0];
 				// var ganttProjStartMonth = gantStartArray[1];
 				// var ganttProjStartDay = gantStartArray[2];
-				var ganttProjStart = ganttStart //new Date(ganttProjStartYear,ganttProjStartMonth,ganttProjStartDay);
+				//var ganttProjStart = ganttStart //new Date(ganttProjStartYear,ganttProjStartMonth,ganttProjStartDay);
 
 				// var ganttProjFinishArray = d.projEnd.split('-');
 				// var ganttProjFinishYear = ganttStartArray[0];
 				// var ganttProjFinishMonth = ganttStartArray[1];
 				// var ganttProjFinishDay = ganttStartArray[2];
-				var ganttProjEnd = ganttEnd //new Date(ganttProjFinishYear,ganttProjFinishMonth,ganttProjFinishDay);
+				//var ganttProjEnd = ganttEnd //new Date(ganttProjFinishYear,ganttProjFinishMonth,ganttProjFinishDay);
 
 				//var ganttEnd = if (d.end) {new Date(d.end)} else (new Date());
 				// var projStart = new Date();
@@ -143,14 +178,14 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 							series: [
 								{
 									"name": "Actual",
-									"start": new Date(ganttStartYear,ganttStartMonth,ganttStartDay),
-									"end": new Date(ganttFinishYear,ganttFinishMonth,ganttFinishDay),
+									"start": ganttStart,
+									"end": ganttEnd,
 									"color": "#ff0000"
-								},
-								{
+								}
+								,{
 									"name": "Projected",
-									"start": new Date(ganttStartYear,ganttStartMonth,ganttStartDay),
-									"end": new Date(ganttFinishYear,ganttFinishMonth,ganttFinishDay),
+									"start": ganttProjStart,
+									"end": ganttProjEnd,
 									"color": "#e0e0e0"
 								}
 
@@ -163,7 +198,7 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				}
 
 			)
-			
+			console.log(ganttData)
 
 			var html = "<div id='eventMessage'></div>";
 			/*var ganttData = [
