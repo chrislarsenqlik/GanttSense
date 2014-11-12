@@ -47,7 +47,7 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 			items: {
 				dimensions: {
 					uses: "dimensions",
-					min: 3
+					min: 5
 				},
 				measures: {
 					uses: "measures",
