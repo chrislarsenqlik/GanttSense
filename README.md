@@ -4,6 +4,8 @@ The Sense Gantt chart has been adapted from the jQuery-ganttView visualization h
 
 Currently you can specify the Projected Start/End dates and the Actual Start/End Dates in the dimensions as well as the name of the task and it will give you a Gantt layout with those 2 time series.
 
+Get the QVF and Test data here (or get via git clone): https://github.com/chrislarsenqlik/GanttSense/tree/master/QVFandData
+
 ###Features:
   - Display Projected/Actual Start/End dates in a gantt-style grid layout
   - Mouseover the task and see the name and number of days
