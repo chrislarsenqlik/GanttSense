@@ -68,10 +68,7 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 
 		},
 		paint: function ( $element, layout) {
-			
-			console.log(layout.qHyperCube)
 			var qData = layout.qHyperCube.qDataPages[0];
-			console.log(qData);
 			var qMatrix = qData.qMatrix;
 			var id = "container_"+ layout.qInfo.qId;
 			 if (document.getElementById(id)) {
@@ -96,9 +93,6 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 			}
 			});
 
-			// console.log('sourcedata:')
-			// console.log(sourcedata)
-
 			var ganttData =[];
 
 			sourcedata.forEach(function(d) {
@@ -115,15 +109,15 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				var ganttFinishDay = ganttFinishArray[2];
 				var ganttEnd = new Date(ganttFinishYear,ganttFinishMonth,ganttFinishDay);
 
-				console.log(d.start)
-				console.log('start array: '+ganttStartArray)
-				console.log('finish array: '+ganttFinishArray)
-				console.log('start year: '+ganttStartYear)
-				console.log('start month: '+ganttStartMonth)
-				console.log('start day: '+ganttStartDay)
-				console.log('finish year: '+ganttFinishYear)
-				console.log('finish month: '+ganttFinishMonth)
-				console.log('finish day: '+ganttFinishDay)
+				// console.log(d.start)
+				// console.log('start array: '+ganttStartArray)
+				// console.log('finish array: '+ganttFinishArray)
+				// console.log('start year: '+ganttStartYear)
+				// console.log('start month: '+ganttStartMonth)
+				// console.log('start day: '+ganttStartDay)
+				// console.log('finish year: '+ganttFinishYear)
+				// console.log('finish month: '+ganttFinishMonth)
+				// console.log('finish day: '+ganttFinishDay)
 
 
 				var ganttProjStartArray = d.projStart.split('-');
@@ -138,38 +132,15 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				var ganttProjFinishDay = ganttProjFinishArray[2];
 				var ganttProjEnd = new Date(ganttProjFinishYear,ganttProjFinishMonth,ganttProjFinishDay);
 
-				console.log(d.start)
-				console.log('Proj start array: '+ganttProjStartArray)
-				console.log('Proj finish array: '+ganttProjFinishArray)
-				console.log('Proj start year: '+ganttProjStartYear)
-				console.log('Proj start month: '+ganttProjStartMonth)
-				console.log('Proj start day: '+ganttProjStartDay)
-				console.log('Proj finish year: '+ganttProjFinishYear)
-				console.log('Proj finish month: '+ganttProjFinishMonth)
-				console.log('Proj finish day: '+ganttProjFinishDay)
-
-
-
-				// var ganttProjStartArray = d.projStart.split('-');
-				// var ganttProjStartYear = ganttStartArray[0];
-				// var ganttProjStartMonth = gantStartArray[1];
-				// var ganttProjStartDay = gantStartArray[2];
-				//var ganttProjStart = ganttStart //new Date(ganttProjStartYear,ganttProjStartMonth,ganttProjStartDay);
-
-				// var ganttProjFinishArray = d.projEnd.split('-');
-				// var ganttProjFinishYear = ganttStartArray[0];
-				// var ganttProjFinishMonth = ganttStartArray[1];
-				// var ganttProjFinishDay = ganttStartArray[2];
-				//var ganttProjEnd = ganttEnd //new Date(ganttProjFinishYear,ganttProjFinishMonth,ganttProjFinishDay);
-
-				//var ganttEnd = if (d.end) {new Date(d.end)} else (new Date());
-				// var projStart = new Date();
-				// var projEnd = new Date();
-					
-				// console.log(ganttStart)
-				// console.log(ganttFinish)
-				// console.log(ganttProjStart)
-				// console.log(ganttProjFinish)
+				// console.log(d.start)
+				// console.log('Proj start array: '+ganttProjStartArray)
+				// console.log('Proj finish array: '+ganttProjFinishArray)
+				// console.log('Proj start year: '+ganttProjStartYear)
+				// console.log('Proj start month: '+ganttProjStartMonth)
+				// console.log('Proj start day: '+ganttProjStartDay)
+				// console.log('Proj finish year: '+ganttProjFinishYear)
+				// console.log('Proj finish month: '+ganttProjFinishMonth)
+				// console.log('Proj finish day: '+ganttProjFinishDay)
 
 					ganttData.push(
 						{
@@ -198,7 +169,6 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 				}
 
 			)
-			console.log(ganttData)
 
 			var html = "<div id='eventMessage'></div>";
 			/*var ganttData = [
@@ -252,8 +222,7 @@ define( ["jquery2","jqueryui2","ganttView","dateJS"], function ($) {
 		]
 	}
 ];*/
-console.log('gantt data:')
-			console.log(ganttData)
+
 			$("#"+id).ganttView({ 
 				data: ganttData,
 				slideWidth: 900,
